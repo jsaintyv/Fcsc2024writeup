@@ -39,7 +39,7 @@ $enddefinitions $end
 https://en.wikipedia.org/wiki/Value_change_dump
 
 Bizarrement, mon code VeryCuteData n’a pas fonctionné. J’ai opté pour une autre solution. Je me focus sur l’un des signals et je fais varier la fréquence d’échantillonnage de l’horloge.
-J'immprime les valeurs qui sont composé de plusieurs chiffre et de digit
+J'imprime les résultats qui sont composées de plusieurs chiffre/digit
 
 Voir le code Java ci-joint [GolgoRot13.java](GolgoRot13.java)
 
