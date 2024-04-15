@@ -4,6 +4,7 @@ Golgrot13
 
 Votre ami bidouilleur était frustré de la communication série trop simple entre ses deux boards IoT, susceptible d'être interceptée par des personnes malveillantes. Il a donc élaboré sa méthode d'obfuscation qu'il a fièrement nommée "Golgrot13": saurez-vous lui prouver que son idée n'est pas des plus brillantes à partir d'une capture à l'analyseur logique ?
 
+![Image fun](golgorot13.png)
 
 Le sujet du challenge est de retrouver le flag dans un fichier VCD
 ```
@@ -53,4 +54,4 @@ https://gchq.github.io/CyberChef/
 Pour récupérer le flag.
 
 
-
+![Cyberchef & rot13](cyberchef.png)
