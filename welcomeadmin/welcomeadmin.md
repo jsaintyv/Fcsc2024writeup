@@ -140,8 +140,8 @@ def level5(cursor: cursor, password: str):
 
 
 Le token, le plus tordu à récupérer.  Il est stocké dans une table avec un nom aléatoire et un nom de colonne aléatoire avec un contenu aléatoire.
-Difficulté, on ne peut pas normalement pas faire de requête avec des nom variabilisé.
-Il me fallait donc un sorte de fonction eval qui consomme un string pouvant contenir une requête.
+Difficulté, on ne peut pas normalement faire de requête avec des nom variabilisé.
+Il me fallait donc une sorte de fonction eval qui consomme un string pouvant contenir une requête.
 Je suis tombé sur les ts_rewrite , to_tsquery dans la doc. 
 Recherche rapide sur google pour trouver exemple d’utilisation sous forme d’exploit. Je tombe sur :
 https://www.synacktiv.com/publications/dont-fear-the-bark-tsrewrite-to-dodge-the-mark
