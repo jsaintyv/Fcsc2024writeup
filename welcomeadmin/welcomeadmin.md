@@ -84,7 +84,7 @@ cursor.execute(f"SELECT '{token}', '{password}';")
     return row[1] == token
 ```
 
-La problématique est ici assez tordue. Il faut que la deuxième de la colonne de requête soit régale au token.
+La problématique est ici assez tordue. Il faut que la deuxième de la colonne du select soit égale au token.
 En explorant les fonctions tordu de la doc de postgres, je suis tombé sur current_query() qui permet de récupérer cette requête.
 Injection :
 ```
@@ -99,7 +99,7 @@ cursor.execute(f"""SELECT md5(random()::text), '{password}';""")
 ```
 
 Il est probablement impossible de deviner le md5(random() ::text)
-Le plus est donc de faire qu’on injecte une nouvelle ligne de données et on ignore la première avec le UNION SELECT … OFFSET
+Le plus simple est donc de faire qu’on injecte une nouvelle ligne de données et on ignore la première avec le UNION SELECT … OFFSET
 
 Injection :
 ```
@@ -140,9 +140,8 @@ def level5(cursor: cursor, password: str):
 
 
 Le token, le plus tordu à récupérer.  Il est stocké dans une table avec un nom aléatoire et un nom de colonne aléatoire avec un contenu aléatoire.
-Difficulté, on ne peut pas normalement faire de requête avec des nom variabilisé.
-Il me fallait donc une sorte de fonction eval qui consomme un string pouvant contenir une requête.
-Je suis tombé sur les ts_rewrite , to_tsquery dans la doc. 
+Difficulté il me fallait donc une sorte de fonction eval qui consomme un string pouvant contenir une requête.
+Je suis tombé sur les ts_rewrite & to_tsquery dans la doc. 
 Recherche rapide sur google pour trouver exemple d’utilisation sous forme d’exploit. Je tombe sur :
 https://www.synacktiv.com/publications/dont-fear-the-bark-tsrewrite-to-dodge-the-mark
 
